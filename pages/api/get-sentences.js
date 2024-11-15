@@ -1,9 +1,7 @@
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
-  const client = await MongoClient.connect(
-    "mongodb+srv://admin-eden:edenrebeccaapp@rebeccadb.hfffjnp.mongodb.net/?retryWrites=true&w=majority&appName=rebeccaDB"
-  );
+  const client = await MongoClient.connect(process.env.MONGODB_CONNECTION);
   const db = client.db();
   const sentencesCollection = db.collection("sentences");
 
