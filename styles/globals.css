@@ -1,16 +1,126 @@
+:root {
+  --lighterBlue: #F3F8FF;
+  --lightBlue: #DEECFF;
+  --purple: #C6CFFF;
+  --pink: #E8D3FF;
+
+  /* primary */
+  --soft-blue: #A8DADC;
+  --gentle-green: #B7E4C7;
+  --warm-neutral: #F5F5DC;
+  --taupe: #D8C3A5;
+
+  /* Accent Colors */
+  --lavender: #e6e6fab8;
+  --rose: #ffc1c194;
+  --gold: #FFD700;
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
+  color: inherit !important;
   text-decoration: none;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+.nav-title {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  width: 100%;
+  white-space: nowrap;
+  transition: font-size .4s ease-in-out, top .6s ease-in-out;
+}
+
+.nav-title.stikey {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 10rem;
+  font-size: 3rem;
+}
+
+/* slick slide */
+
+section[id=תמונות] {
+
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+
+    height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .slick-slider.slick-initialized {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+
+    height: 70%;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 1rem;
+  }
+
+  .slick-slider.slick-initialized .slick-list {
+    height: 100%;
+  }
+
+  .slick-slider.slick-initialized .slick-dots {
+    position: unset;
+  }
+
+  .slick-slider.slick-initialized .slick-list .slick-track {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    height: 100%;
+  }
+
+  .slick-slider.slick-initialized .slick-list .slick-track .slick-slide {
+    align-content: center;
+  }
+
+  .slick-slider.slick-initialized .slick-list .slick-track .slick-slide div {
+    height: 100%;
+  }
+
+  .slick-slider.slick-initialized .slick-list .slick-track .slick-slide div div {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .slick-slider.slick-initialized .slick-arrow::before {
+    color: black;
+  }
 }

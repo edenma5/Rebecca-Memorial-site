@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap");
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+  position: relative;
+  top: 67.5px;
+  height: calc(100vh - 67.5px);
+}
+.section .main_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0 -6rem;
+  padding: 1rem 5rem;
+}
+.section .main_title h1 {
+  font-family: "Karantina", system-ui;
+  font-weight: 400;
+  font-size: 6rem;
+  letter-spacing: 3px;
+}
+.section .main_title h4 {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.section .main_images img {
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  border-radius: 3rem;
+  box-shadow: 0 0 33px #000;
+}
+.section .main_images img:nth-child(1) {
+  top: 2rem;
+  filter: grayscale(1);
+  right: 2rem;
+  opacity: 0.4;
+  width: 30rem;
+}
+.section .main_images img:nth-child(2) {
+  top: 30rem;
+  right: 40%;
+  opacity: 0.5;
+  width: 33rem;
+}
+.section .main_images img:nth-child(3) {
+  width: 40rem;
+  top: 6rem;
+  left: 2rem;
+  opacity: 0.5;
+}
+.section .main_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+}
+.section .main_container::before {
+  content: "";
+  background-image: url("../../public/assets/Beautiful-Grandma-Women.png");
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-size: auto 50%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  background-position: right bottom;
+}
+.section .main_container .content_container {
+  text-align: right;
+  width: 60%;
+  color: #302f2f;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+.section .main_container .image_container {
+  width: 35%;
+  height: auto;
+}
+.section .main_container .image_container img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 2rem;
+  box-shadow: 0 0 1px #000;
+}
+.section .main_container .roseImg {
+  position: absolute;
+  width: 15%;
+  left: 30%;
+  top: 15%;
+  filter: drop-shadow(2px 4px 6px black);
+}/*# sourceMappingURL=Main.module.css.map */

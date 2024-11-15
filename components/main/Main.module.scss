@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+
+    position: relative;
+    top: 67.5px;
+    height: calc(100vh - 67.5px);
+
+    .main_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0 -6rem;
+        padding: 1rem 5rem;
+
+        h1 {
+            font-family: "Karantina", system-ui;
+            font-weight: 400;
+            font-size: 6rem;
+            letter-spacing: 3px;
+        }
+
+        h4 {
+            font-family: "Amatic SC", sans-serif;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+    }
+
+    .main_images {
+
+        img {
+            width: 20rem;
+            height: auto;
+            position: absolute;
+            z-index: -1;
+            border-radius: 3rem;
+            box-shadow: 0 0 33px #000;
+
+            &:nth-child(1) {
+                top: 2rem;
+                filter: grayscale(1);
+                right: 2rem;
+                opacity: 0.4;
+                width: 30rem;
+            }
+
+            &:nth-child(2) {
+
+                top: 30rem;
+                right: 40%;
+                opacity: .5;
+                width: 33rem;
+            }
+
+            &:nth-child(3) {
+                width: 40rem;
+                top: 6rem;
+                left: 2rem;
+                opacity: .5;
+            }
+        }
+    }
+
+    .main_container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        max-width: 1600px;
+
+        &::before {
+            content: '';
+            background-image: url('../../public/assets/Beautiful-Grandma-Women.png');
+            background-repeat: no-repeat;
+            z-index: 0;
+            background-size: auto 50%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            display: block;
+            height: 100%;
+            background-position: right bottom;
+        }
+
+        .content_container {
+            text-align: right;
+            width: 60%;
+            color: #302f2f;
+            line-height: 1.5;
+            font-size: 1.2rem;
+            padding: 2rem;
+        }
+
+        .image_container {
+            width: 35%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                border-radius: 2rem;
+                box-shadow: 0 0 1px #000;
+            }
+        }
+
+        .roseImg {
+            position: absolute;
+            width: 15%;
+            left: 30%;
+            top: 15%;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+    }
+}

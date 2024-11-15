@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 67.5px;
+  height: calc(100vh - 67.5px);
+  width: 100%;
+  background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left center;
+}
+.wrapper .title_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.wrapper .form_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 45rem;
+  height: 15rem;
+}
+.wrapper .form_wrapper .form_container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+.wrapper .form_wrapper .form_container .sentence_field {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.wrapper .form_wrapper .form_container .sentence_field:nth-child(1), .wrapper .form_wrapper .form_container .sentence_field:nth-child(2) {
+  width: 50%;
+}
+.wrapper .form_wrapper .form_container .sentence_field:nth-child(3) {
+  width: 100%;
+}
+.wrapper .form_wrapper .form_container .sentence_field label {
+  left: unset;
+}
+.wrapper .form_wrapper .form_container .sentence_field span {
+  color: red;
+  height: 0;
+}/*# sourceMappingURL=AddSentence.module.css.map */

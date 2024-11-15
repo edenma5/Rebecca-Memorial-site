@@ -1,0 +1,156 @@
+.section {
+    background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+
+    .sentences_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        max-width: 1600px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 2rem 3rem;
+
+        .sentences_input form {
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 1rem;
+            max-width: 100%;
+
+            button {
+                padding: 0.5rem 2rem;
+                font-size: 1.2rem;
+                background: #9595e1;
+                color: #F2F2F2;
+                border: unset;
+                border-radius: 0.5rem;
+                box-shadow: 3px 3px 2px 0px #b9b9e1;
+                transition: .2s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background: #F2F2F2;
+                    color: #000000;
+                    box-shadow: 3px 3px 2px 0px #000;
+                }
+            }
+
+            input {
+                font-size: 18px;
+                padding: .5rem 1rem;
+                width: 100%;
+                outline: none;
+                background: #FFFFFF;
+                color: #000000;
+                border: 1px solid #C4D1EB;
+                border-radius: 5px;
+                box-shadow: 3px 3px 2px 0px #E2E2E2;
+                transition: .3s ease;
+
+                &:focus {
+                    background: #F2F2F2;
+                    border: 1px solid #5A7EC7;
+                    border-radius: 10px;
+                }
+
+                &::placeholder {
+                    color: #808080;
+                }
+            }
+        }
+
+        .sentences_content {
+
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            width: 100%;
+            height: 60%;
+            max-height: 45rem;
+            padding: 1rem;
+            background-color: #fffc;
+            // box-shadow: 0 0 0 1px #0005;
+            border-radius: 1rem;
+
+            .loader {
+                width: 50px;
+                aspect-ratio: 1;
+                color: #dc1818;
+                background:
+                    radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+                    radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+                    linear-gradient(to bottom left, currentColor 42%, #0000 43%) bottom left,
+                    linear-gradient(to bottom right, currentColor 42%, #0000 43%) bottom right;
+                background-size: 50% 50%;
+                background-repeat: no-repeat;
+
+                position: absolute;
+                z-index: 6;
+                left: 0;
+                top: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .loader:after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: inherit;
+                opacity: 0.4;
+                animation: l3 1s infinite;
+            }
+
+            @keyframes l3 {
+                to {
+                    transform: scale(1.8);
+                    opacity: 0
+                }
+            }
+
+            .sentences_lists {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                padding: .5rem;
+                gap: .75rem 2rem;
+                height: 100%;
+
+                li {
+                    width: max-content;
+                    list-style: none;
+
+                    padding: .5rem 1rem;
+                    border-radius: 0.5rem;
+                    cursor: help;
+                    // box-shadow: 0 0 0 .5px #0000008f;
+
+                    transition: background .3s ease-in-out;
+
+                    &:nth-child(odd) {
+                        background: var(--lavender);
+
+                        &:hover {
+                            background: var(--rose);
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        background: var(--rose);
+
+                        &:hover {
+                            background: var(--lavender);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
