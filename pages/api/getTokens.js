@@ -5,20 +5,12 @@ import * as http from 'http'; //ES 6
 import * as url from "url";
 import * as querystring from "querystring";
 
-// Replace with your credentials
-const CLIENT_ID = '207819093641-bsebggbrcr7ahiijk0celunnn4kcfick.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
-const REDIRECT_URI = 'http://localhost:3000/oauth2callback';
-
-// Scope for read-only access to Google Photos
-const SCOPE = 'https://www.googleapis.com/auth/photoslibrary.readonly';
-
 // Step 1: Get authorization code
 const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?${querystring.stringify({
-    client_id: CLIENT_ID,
-    redirect_uri: REDIRECT_URI,
+    client_id: process.env.CLIENT_ID,
+    redirect_uri: process.env.REDIRECT_URI,
     response_type: 'code',
-    scope: SCOPE,
+    scope: process.env.SCOPE,
     access_type: 'offline',
     prompt: 'consent',
 })}`;
@@ -40,9 +32,9 @@ const server = http.createServer(async (req, res) => {
             const tokenResponse = await axios.post('https://oauth2.googleapis.com/token', null, {
                 params: {
                     code: code,
-                    client_id: CLIENT_ID,
-                    client_secret: CLIENT_SECRET,
-                    redirect_uri: REDIRECT_URI,
+                    client_id: process.env.CLIENT_ID,
+                    client_secret: process.env.CLIENT_SECRET,
+                    redirect_uri: process.env.REDIRECT_URI,
                     grant_type: 'authorization_code',
                 },
             });

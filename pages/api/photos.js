@@ -6,9 +6,9 @@ export default async function handler(req, res) {
         try {
             const response = await axios.post('https://oauth2.googleapis.com/token', null, {
                 params: {
-                    client_id: '207819093641-bsebggbrcr7ahiijk0celunnn4kcfick.apps.googleusercontent.com',
-                    client_secret: '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',
-                    refresh_token: '1//03lQeifa88vBdCgYIARAAGAMSNwF-L9IruDU47UMhS-B0-tTDaU_xlMAi227p9W5qyXBvM26A9guIOlq2O0SoGw1i8MxTXaUvC5w',
+                    client_id: process.env.CLIENT_ID,
+                    client_secret: process.env.CLIENT_SECRET,
+                    refresh_token: process.env.REFRESH_TOKEN,
                     grant_type: 'refresh_token',
                 },
             });
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         const accessToken = await getAccessToken();
 
         // Replace 'YOUR_ALBUM_ID' with your actual album ID obtained from the previous step
-        const albumId = 'AK-VX93If-pdvfU2B2pk037i0MvafAwMkMKotES71UzkARR1yt1owtnmKkz9D-CsHw37h6aJ74dQ';
+        const albumId = process.env.ALBUM_ID;
 
         // Using mediaItems.search to fetch items from a specific album
         const response = await axios.post(

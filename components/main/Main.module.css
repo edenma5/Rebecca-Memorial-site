@@ -64,7 +64,7 @@
 }
 .section .main_container::before {
   content: "";
-  background-image: url("../../public/assets/Beautiful-Grandma-Women.png");
+  background-image: url("../../public/assets/Grandma-Women.png");
   background-repeat: no-repeat;
   z-index: 0;
   background-size: auto 50%;
