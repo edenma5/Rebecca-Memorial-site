@@ -10,16 +10,12 @@ const Navbar = () => {
   const navCordinates = useRef();
   const navTitle = useRef();
 
-  console.log(pathname);
-
   useEffect(() => {
     if (navCordinates.current && pathname === '/') {
       navTitle.current.classList.add('stikey');
-      console.log(navCordinates.current);
       const navRect = navCordinates.current.getBoundingClientRect();
       const navRectHeight = navRect.height;
 
-      console.log(navRectHeight);
       window.addEventListener('scroll', () => {
         if (navRectHeight >= window.scrollY) {
           navTitle.current.classList.add('stikey');
