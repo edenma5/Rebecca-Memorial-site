@@ -8,7 +8,7 @@ export default async function handler(req, res) {
                 params: {
                     client_id: process.env.CLIENT_ID,
                     client_secret: process.env.CLIENT_SECRET,
-                    refresh_token: process.env.REFRESH_TOKEN,
+                    refresh_token: '1//03ZyQ08GFvinBCgYIARAAGAMSNwF-L9IruKL6ngWxK-Qej55YAqasA6oBndlI1WexKtZ11JA4WiyL3LoAmpToGBEZ0KKtRE135U4',
                     grant_type: 'refresh_token',
                 },
             });
