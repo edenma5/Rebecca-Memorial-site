@@ -1,7 +1,6 @@
 {
   "name": "rebecca_our_angel",
   "version": "0.1.0",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,7 +16,7 @@
     "@mui/material": "^5.15.15",
     "axios": "^1.6.8",
     "mongodb": "^6.5.0",
-    "next": "^15.0.4-canary.13",
+    "next": "14.2.3",
     "open": "^10.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
