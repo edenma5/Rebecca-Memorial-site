@@ -10,8 +10,9 @@ const Navbar = () => {
   const navCordinates = useRef();
   const navTitle = useRef();
 
+
   useEffect(() => {
-    if (navCordinates.current && pathname === '/') {
+    if (navCordinates.current && pathname === '/' && window.matchMedia('only screen and (min-width: 768px)').matches) {
       navTitle.current.classList.add('stikey');
       const navRect = navCordinates.current.getBoundingClientRect();
       const navRectHeight = navRect.height;
@@ -25,7 +26,7 @@ const Navbar = () => {
         }
       })
     }
-    else if (pathname !== '/') {
+    else {
       navTitle.current.classList.remove('stikey');
     }
   }, [navCordinates, pathname])
@@ -58,8 +59,16 @@ const Navbar = () => {
 
   return (
     <nav className={classes.nav} ref={navCordinates}>
-      <div className="nav-title" ref={navTitle}>
+      {/* <div className="nav-title">
         <span>רבקה דוד ז״ל 09.11.1940 - 19.04.2023</span>
+      </div> */}
+      <div className="nav-title" ref={navTitle}>
+        <span className="nav-title-primary">
+          רבקה דוד ז״ל
+          <span className="nav-title-secondary">
+            09.11.1940 - 19.04.2023
+          </span>
+        </span>
       </div>
       <ul>
         {navLinks.map((item, i) => (

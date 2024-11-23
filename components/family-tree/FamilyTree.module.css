@@ -19,4 +19,10 @@
 .section .main_container .family_tree_container img {
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .section .main_container {
+    padding: 0;
+  }
 }/*# sourceMappingURL=FamilyTree.module.css.map */

@@ -68,6 +68,14 @@ const AddSentence = () => {
 
   return (
     <div className={classes.wrapper}>
+      <div className="nav-title mobile">
+        <span className="nav-title-primary">
+          רבקה דוד ז״ל
+          <span className="nav-title-secondary">
+            09.11.1940 - 19.04.2023
+          </span>
+        </span>
+      </div>
       <div className={classes.title_container}>
         <h1>הוספת משפט אישי</h1>
       </div>

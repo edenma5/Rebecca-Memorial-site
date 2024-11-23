@@ -154,3 +154,23 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .section {
+        .sentences_container {
+
+            padding: 0;
+
+            .sentences_content {
+
+                height: 70%;
+
+                .sentences_lists {
+
+                    overflow: auto;
+                    gap: .75rem 1rem;
+                }
+            }
+        }
+    }
+}

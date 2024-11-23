@@ -3,6 +3,14 @@ import classes from "@/components/main/Main.module.css";
 const Main = () => {
   return (
     <section id="/" className={classes.section}>
+      <div className="nav-title mobile">
+        <span className="nav-title-primary">
+          רבקה דוד ז״ל
+          <span className="nav-title-secondary">
+            09.11.1940 - 19.04.2023
+          </span>
+        </span>
+      </div>
       {/* <div className={classes.main_title}>
         <h1>רבקה</h1>
         <h4>רבקה דוד ז״ל</h4>

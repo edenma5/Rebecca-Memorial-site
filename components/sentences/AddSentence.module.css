@@ -49,4 +49,19 @@
 .wrapper .form_wrapper .form_container .sentence_field span {
   color: red;
   height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .form_wrapper {
+    max-width: 100%;
+    height: unset;
+  }
+  .wrapper .form_wrapper .form_container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: unset;
+  }
+  .wrapper .form_wrapper .form_container .sentence_field:nth-child(1), .wrapper .form_wrapper .form_container .sentence_field:nth-child(2) {
+    width: 100%;
+  }
 }/*# sourceMappingURL=AddSentence.module.css.map */

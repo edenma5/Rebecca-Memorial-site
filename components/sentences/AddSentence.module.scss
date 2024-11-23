@@ -71,3 +71,30 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+
+        .form_wrapper {
+
+            max-width: 100%;
+            height: unset;
+
+            .form_container {
+
+                flex-direction: column;
+                flex-wrap: nowrap;
+                row-gap: unset;
+
+                .sentence_field {
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

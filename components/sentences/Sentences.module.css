@@ -127,4 +127,17 @@
 }
 .section .sentences_container .sentences_content .sentences_lists li:nth-child(even):hover {
   background: var(--lavender);
+}
+
+@media screen and (max-width: 768px) {
+  .section .sentences_container {
+    padding: 0;
+  }
+  .section .sentences_container .sentences_content {
+    height: 70%;
+  }
+  .section .sentences_container .sentences_content .sentences_lists {
+    overflow: auto;
+    gap: 0.75rem 1rem;
+  }
 }/*# sourceMappingURL=Sentences.module.css.map */

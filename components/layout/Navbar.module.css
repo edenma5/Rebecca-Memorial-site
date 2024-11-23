@@ -33,4 +33,15 @@
 }
 .nav ul .active {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 1.5rem;
+  }
+  .nav ul {
+    font-size: 0.8rem;
+    margin: 0 auto;
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=Navbar.module.css.map */
