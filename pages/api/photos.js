@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         try {
             const response = await axios.post('https://oauth2.googleapis.com/token', null, {
                 params: {
-                    client_id: process.env.CLIENT_ID,
+                    client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
                     client_secret: process.env.CLIENT_SECRET,
                     refresh_token: process.env.REFRESH_TOKEN,
                     grant_type: 'refresh_token',

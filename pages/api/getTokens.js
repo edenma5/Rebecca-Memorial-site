@@ -1,4 +1,6 @@
 // getTokens.js
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env' });
 import axios from 'axios';
 import open from 'open';
 import * as http from 'http'; //ES 6
@@ -7,8 +9,8 @@ import * as querystring from "querystring";
 
 // Step 1: Get authorization code
 const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?${querystring.stringify({
-    client_id: process.env.CLIENT_ID,
-    redirect_uri: process.env.REDIRECT_URI,
+    client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+    redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
     response_type: 'code',
     scope: process.env.SCOPE,
     access_type: 'offline',
@@ -32,9 +34,9 @@ const server = http.createServer(async (req, res) => {
             const tokenResponse = await axios.post('https://oauth2.googleapis.com/token', null, {
                 params: {
                     code: code,
-                    client_id: process.env.CLIENT_ID,
+                    client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
                     client_secret: process.env.CLIENT_SECRET,
-                    redirect_uri: process.env.REDIRECT_URI,
+                    redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
                     grant_type: 'authorization_code',
                 },
             });
