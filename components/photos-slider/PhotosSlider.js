@@ -1,7 +1,10 @@
-// pages/index.js
+// components/photos-slider/PhotosSlider.js
 import { useState, useEffect } from 'react';
-import Slider from 'react-slick';
-import classes from "@/components/phptos-slider/PhotosSlider.module.css";
+import dynamic from 'next/dynamic';
+import classes from '@/components/photos-slider/PhotosSlider.module.css';
+
+// Dynamically import react-slick and extract the default export
+const Slider = dynamic(() => import('react-slick').then(mod => mod.default), { ssr: false });
 
 export default function PhotosSlider() {
   const [photos, setPhotos] = useState([]);
@@ -38,11 +41,10 @@ export default function PhotosSlider() {
     accessibility: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    // initialSlide: 0,
-    // centerMode: true,
     responsive: [
       {
         breakpoint: 1024,
+        // Uncomment and configure if needed
         // settings: {
         //   slidesToShow: 3,
         //   slidesToScroll: 3,
@@ -69,33 +71,40 @@ export default function PhotosSlider() {
     className: 'center',
   };
 
-  let div;
+  let content;
   if (loading) {
-    div = <div style={{ textAlign: 'center', padding: '50px' }}>Loading photos...</div>;
-  }
-
-  if (photos.length === 0) {
-    div = <div style={{ textAlign: 'center', padding: '50px' }}>No photos to display.</div>;
+    content = <div style={{ textAlign: 'center', padding: '50px' }}>Loading photos...</div>;
+  } else if (photos.length === 0) {
+    content = <div style={{ textAlign: 'center', padding: '50px' }}>No photos to display.</div>;
+  } else {
+    content = (
+      <div className="slider-container">
+        <h1 style={{ textAlign: 'center' }}>גלריית תמונות</h1>
+        <Slider {...settings}>
+          {photos.map((photo) => (
+            <div key={photo.id}>
+              <img
+                src={`${photo.baseUrl}=w1200-h900`}
+                alt={photo.filename}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '100%',
+                  borderRadius: '10px',
+                  objectFit: 'contain',
+                  aspectRatio: `${photo.mediaMetadata.width} / ${photo.mediaMetadata.height}`
+                }}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
   }
 
   return (
     <section id="photos" className={classes.section}>
-      {div ? div :
-        <div className="slider-container">
-          <h1 style={{ textAlign: 'center' }}>גלריית תמונות</h1>
-          <Slider {...settings}>
-            {photos.map((photo) => (
-              <div key={photo.id}>
-                <img
-                  src={`${photo.baseUrl}=w1200-h900`}
-                  alt={photo.filename}
-                  style={{ width: '100%', height: 'auto', maxHeight: '100%', borderRadius: '10px', objectFit: 'contain', aspectRatio: `${photo.mediaMetadata.width} / ${photo.mediaMetadata.height}` }}
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      }
+      {content}
     </section>
   );
 }
