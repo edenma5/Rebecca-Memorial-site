@@ -29,9 +29,7 @@ const Navbar = () => {
     else {
       navTitle.current.classList.remove('stikey');
     }
-  }, [navCordinates, pathname])
-
-  // console.log(navCordinates.current.getBoundingClientRect());
+  }, [ pathname])
 
   const navLinks = [
     {

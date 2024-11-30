@@ -1,7 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { TextField } from "@mui/material";
-import LoadingButton from "@mui/lab/LoadingButton";
-import { useRouter } from "next/navigation";
+import { LoadingButton } from '@mui/lab';
+import { useRouter } from "next/router"; // Corrected import
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Bounce, ToastContainer, toast } from "react-toastify";
@@ -71,9 +73,7 @@ const AddSentence = () => {
       <div className="nav-title mobile">
         <span className="nav-title-primary">
           רבקה דוד ז״ל
-          <span className="nav-title-secondary">
-            09.11.1940 - 19.04.2023
-          </span>
+          <span className="nav-title-secondary">09.11.1940 - 19.04.2023</span>
         </span>
       </div>
       <div className={classes.title_container}>
@@ -98,7 +98,11 @@ const AddSentence = () => {
                 maxLength: { value: 15, message: "עד 15 תווים בלבד" },
               })}
             ></TextField>
-            <span>{errors.fullName?.message}</span>
+            <span>
+              {typeof errors.fullName?.message === "string"
+                ? errors.fullName?.message
+                : JSON.stringify(errors.fullName?.message)}
+            </span>
           </div>
 
           <div className={classes.sentence_field}>
@@ -115,7 +119,11 @@ const AddSentence = () => {
                 maxLength: { value: 15, message: "עד 15 תווים בלבד" },
               })}
             ></TextField>
-            <span>{errors.familyCloseness?.message}</span>
+            <span>
+              {typeof errors.familyCloseness?.message === "string"
+                ? errors.familyCloseness?.message
+                : JSON.stringify(errors.familyCloseness?.message)}
+            </span>
           </div>
 
           <div className={classes.sentence_field}>
@@ -126,13 +134,17 @@ const AddSentence = () => {
               {...register("sentence", {
                 required: "נא להזין משפט",
                 pattern: {
-                  value: /[\u0590-\u05FF\s!?,:\)\(\p{So}]/,
+                  value: /[\u0590-\u05FF\s!?,:\)\(\p{So}]/u, // Added 'u' flag
                   message: "יש להזין משפט תקין בעברית",
                 },
                 maxLength: { value: 50, message: "עד 50 תווים בלבד" },
               })}
             ></TextField>
-            <span>{errors.sentence?.message}</span>
+            <span>
+              {typeof errors.sentence?.message === "string"
+                ? errors.sentence?.message
+                : JSON.stringify(errors.sentence?.message)}
+            </span>
           </div>
 
           <LoadingButton

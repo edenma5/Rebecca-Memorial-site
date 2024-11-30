@@ -184,4 +184,18 @@ section[id=photos] {
   .nav-title:not(.mobile) {
     display: none;
   }
+
+  section[id=photos] {
+
+    .slider-container {
+
+      padding: 0 2rem;
+    }
+
+    .slick-slider.slick-initialized .slick-dots {
+
+      display: flex !important;
+      overflow: auto;
+    }
+  }
 }

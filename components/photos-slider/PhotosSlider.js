@@ -34,26 +34,23 @@ export default function PhotosSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    autoplay: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
     adaptiveHeight: true,
     accessibility: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
+      // {
+      //   breakpoint: 1024,
+      //   settings: {
+      //     slidesToShow: 3,
+      //     slidesToScroll: 3,
+      //   }
+      // },
       {
-        breakpoint: 1024,
-        // Uncomment and configure if needed
-        // settings: {
-        //   slidesToShow: 3,
-        //   slidesToScroll: 3,
-        //   infinite: true,
-        //   dots: true
-        // }
-      },
-      {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -73,9 +70,9 @@ export default function PhotosSlider() {
 
   let content;
   if (loading) {
-    content = <div style={{ textAlign: 'center', padding: '50px' }}>Loading photos...</div>;
+    content = <div style={{ textAlign: 'center', padding: '50px' }}>טוען תמונות</div>;
   } else if (photos.length === 0) {
-    content = <div style={{ textAlign: 'center', padding: '50px' }}>No photos to display.</div>;
+    content = <div style={{ textAlign: 'center', padding: '50px' }}>אין תמונות לתצוגה</div>;
   } else {
     content = (
       <div className="slider-container">
